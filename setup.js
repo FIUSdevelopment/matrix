@@ -24,7 +24,13 @@ switch (config.discord.enabled) {
             var dsjsversion = `@${config.discord.discordjsversion}`;
         }
         exec(`npm i discord.js${dsjsversion}`);
-        console.log('Discord.js installed successfully at version '+dsjsversion);
+
+        if (!dsjsversion) {
+            msg = '.'
+        } else {
+            msg = ' at version '+dsjsversion
+        }
+        console.log('Discord.js installed successfully'+msg);
         break;
 
     case false:
