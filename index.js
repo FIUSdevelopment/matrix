@@ -1,5 +1,9 @@
 const config = require('./config');
-const login = require('./bin/discord/login');
-client = login(config.discord.intents, config.discord.token);
+const discord = require('./src/discord/index');
 
-// console.log(client)
+if (config.discord.enabled) {
+    var dsclient = discord()
+    require("./src/discord/handler/events")(dsclient);
+}
+
+module.exports = dsclient

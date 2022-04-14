@@ -25,6 +25,8 @@
   "homepage": "https://github.com/FIUSdevelopment/matrix#readme",
   "dependencies": {
     "discord.js": "^13.6.0",
-    "quickmap.db": "^1.0.6"
+    "glob": "^8.0.1",
+    "quickmap.db": "^1.0.6",
+    "util": "^0.12.4"
   }
 }
