@@ -1,21 +1,24 @@
 {
   "name": "matrix",
-  "version": "0.0.1",
-  "description": "A multiporpose \"all\" bot",
+  "version": "1.0.0",
+  "description": "Matrix",
   "main": "index.js",
   "scripts": {
     "test": "npm start",
     "start": "node index.js",
-    "setup": "node setup.js"
+    "install": "node utils/setup.js",
+    "setup": "npm run install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FIUSdevelopment/matrix.git"
   },
   "keywords": [
-    "discord-bot",
-    "telegram-bot",
-    "webserver"
+    "bot",
+    "discord",
+    "telegram",
+    "javascript",
+    "twitch"
   ],
   "author": "FIUS Development | Killer Boss Original",
   "license": "ISC",
@@ -24,7 +27,9 @@
   },
   "homepage": "https://github.com/FIUSdevelopment/matrix#readme",
   "dependencies": {
-    "discord.js": "^13.6.0",
+    "chalk": "^4.1.2",
+    "discord.js": "^13.7.0",
+    "fs": "^0.0.1-security",
     "glob": "^8.0.1",
     "quickmap.db": "^1.0.6",
     "util": "^0.12.4"

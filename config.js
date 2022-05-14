@@ -1,15 +1,54 @@
 module.exports = {
-    db: 'mapdb', // disabled, mapdb
-    discord: {
-        enabled: true,
-        discordjsversion: 'latest', // latest or search on github
-        token: 'ODkyMDQ2OTY1MjgwNDg5NTMz.YVHNeQ.HqzvBrns2nWRMO9alc4j9s5XpFc', // discord.dev
-        intents: 32767, // use discord intents calculator to get the number
-    },
-    telegram: {
-        enabled: false,
-    },
-    webserver: {
-        enabled: false,
-    },
+	debug: false,
+	logAllMessages: false,
+	database: {
+		type: 'mapdb',
+		name: 'test',
+		number: 1,
+	},
+	discord: {
+		enabled: true,
+		discordjsversion: 'latest',
+		token: '',
+		intents: 32767,
+		slashCommandsPublic: true,
+		supportServer: '',
+		privateServers: [''],
+		prefix: 'mr.',
+		whitelistedBots: [],
+		helpEmoji: {
+			test: '',
+			info: '',
+			moderation: '',
+		},
+		client: {
+			name: '',
+			avatar: '',
+			footer: ''
+		},
+		beta: {
+			type: 'multi',
+			name: '',
+			avatar: '',
+			token: '',
+		},
+		private: {
+			type: 'multi',
+			name: '',
+			avatar: '',
+			token: '',
+		},
+		premium: {
+			type: 'multi',
+			name: '',
+			avatar: '',
+			token: '',
+		},
+	},
+	telegram: {
+		enabled: false, // not working for now
+	},
+	webserver: {
+		enabled: false, // not working for now
+	},
 };
