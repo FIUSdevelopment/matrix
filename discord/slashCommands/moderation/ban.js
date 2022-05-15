@@ -41,7 +41,7 @@ module.exports = {
 			.setAuthor({ name: interaction.user.tag, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
 			.setTitle('User successfully banned!')
 			.setDescription(`**${member.tag}** was banned from ${interaction.user.tag} for the reason: \`${reason}\`.`)
-			.setFooter({ text: 'By FIUS Development', iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
+			.setFooter({ text: client.config.discord.client.footer, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) })
 			.setColor('RED');
 		return interaction.reply({ embeds: [embed] });
     },
