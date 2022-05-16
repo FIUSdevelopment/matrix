@@ -62,14 +62,14 @@ module.exports = async (client) => {
 						.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 						.setTimestamp();
 					return message.reply({ embeds: [toggleoff_embed] });
-				} else if (!message.member.permissions.has(command.userpermissions || [])) {
+				} else if (!message.member.permissions.has(command.userPermissions || [])) {
 					let userperms_embed = new MessageEmbed()
 						.setTitle(':x: | You Don\'t Have Permissions To Use The Command!')
 						.setColor('RED')
 						.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 						.setTimestamp();
 					return message.reply({ embeds: [userperms_embed] });
-				} else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
+				} else if (!message.guild.me.permissions.has(command.botPermissions || [])) {
 					let botperms_embed = new MessageEmbed()
 						.setTitle(':x: | I Don\'t Have Permissions To Use The Command!')
 						.setColor('RED')
@@ -153,14 +153,14 @@ module.exports = async (client) => {
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [toggleoff_embed] });
-					} else if (!message.member.permissions.has(command.userpermissions || [])) {
+					} else if (!message.member.permissions.has(command.userPermissions || [])) {
 						let userperms_embed = new MessageEmbed()
 							.setTitle(':x: | You Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [userperms_embed] });
-					} else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
+					} else if (!message.guild.me.permissions.has(command.botPermissions || [])) {
 						let botperms_embed = new MessageEmbed()
 							.setTitle(':x: | I Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')
@@ -247,14 +247,14 @@ module.exports = async (client) => {
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [toggleoff_embed] });
-					} else if (!message.member.permissions.has(command.userpermissions || [])) {
+					} else if (!message.member.permissions.has(command.userPermissions || [])) {
 						let userperms_embed = new MessageEmbed()
 							.setTitle(':x: | You Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [userperms_embed] });
-					} else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
+					} else if (!message.guild.me.permissions.has(command.botPermissions || [])) {
 						let botperms_embed = new MessageEmbed()
 							.setTitle(':x: | I Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')
@@ -347,14 +347,14 @@ module.exports = async (client) => {
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [toggleoff_embed] });
-					} else if (!message.member.permissions.has(command.userpermissions || [])) {
+					} else if (!message.member.permissions.has(command.userPermissions || [])) {
 						let userperms_embed = new MessageEmbed()
 							.setTitle(':x: | You Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')
 							.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 							.setTimestamp();
 						return message.reply({ embeds: [userperms_embed] });
-					} else if (!message.guild.me.permissions.has(command.botpermissions || [])) {
+					} else if (!message.guild.me.permissions.has(command.botPermissions || [])) {
 						let botperms_embed = new MessageEmbed()
 							.setTitle(':x: | I Don\'t Have Permissions To Use The Command!')
 							.setColor('RED')

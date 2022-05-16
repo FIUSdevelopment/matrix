@@ -1,7 +1,9 @@
 module.exports = async (client) => {
 	if (client.config.debug) {
 		console.log('[Debug] Discord event "ready" online');
-	}
+	};
+	const { discord } = require('../../config');
+	const prefix = discord.prefix;
 	const chalk = require('chalk');
 	const { version: discordjsVersion } = require('discord.js');
 	client.on('ready', async () => {
@@ -10,15 +12,13 @@ module.exports = async (client) => {
 			client.user.setActivity('Debug Mode', { type: 'WATCHING' });
 
 		} else {
-			const { discord } = require('../../config');
-			const prefix = discord.prefix;
 			const supportServer = discord.supportServer;
 			const supportServerID = client.guilds.cache.get(supportServer);
 			if (!supportServerID) console.log('');
 			// ———————————————[Status]———————————————
 			client.user.setActivity(`${prefix}help || ${client.guilds.cache.size} ${client.guilds.cache.size > 1 ? 'Servers' : 'Server'}`, { type: 'WATCHING' });
 			// ———————————————[Ready MSG]———————————————
-			console.log(chalk.green.bold('Success!'));
+			// console.log(chalk.green.bold('Success!'));
 			console.log(chalk.gray('Connected To'), chalk.yellow(`${client.user.tag}`));
 			console.log(
 				chalk.white('Watching'),
@@ -54,7 +54,7 @@ module.exports = async (client) => {
 	if (client.config.discord.beta.type == 'multi') {
 		client.version.beta.on('ready', async () => {
 			// ———————————————[Ready MSG]———————————————
-			console.log('Beta logged in');
+			console.log(chalk.gray('Connected To'), chalk.yellow(`${client.version.beta.user.tag} (beta)`));
 			// ———————————————[Status]———————————————
 			client.version.beta.user.setActivity(`${prefix}help || ${client.version.beta.guilds.cache.size} ${client.version.beta.guilds.cache.size > 1 ? 'Servers' : 'Server'}`, { type: 'WATCHING' });
 		});
@@ -62,7 +62,7 @@ module.exports = async (client) => {
 	if (client.config.discord.premium.type == 'multi') {
 		client.version.premium.on('ready', async () => {
 			// ———————————————[Ready MSG]———————————————
-			console.log('Premium logged in');
+			console.log(chalk.gray('Connected To'), chalk.yellow(`${client.version.premium.user.tag} (premium)`));
 			// ———————————————[Status]———————————————
 			client.version.premium.user.setActivity(`${prefix}help || ${client.version.premium.guilds.cache.size} ${client.version.premium.guilds.cache.size > 1 ? 'Servers' : 'Server'}`, { type: 'WATCHING' });
 		});
@@ -70,7 +70,7 @@ module.exports = async (client) => {
 	if (client.config.discord.private.type == 'multi') {
 		client.version.private.on('ready', async () => {
 			// ———————————————[Ready MSG]———————————————
-			console.log('Private logged in');
+			console.log(chalk.gray('Connected To'), chalk.yellow(`${client.version.private.user.tag} (private)`));
 			// ———————————————[Status]———————————————
 			client.version.private.user.setActivity(`${prefix}help || ${client.version.private.guilds.cache.size} ${client.version.private.guilds.cache.size > 1 ? 'Servers' : 'Server'}`, { type: 'WATCHING' });
 		});

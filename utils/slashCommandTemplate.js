@@ -4,6 +4,8 @@ module.exports = {
     beta: false,
     premium: false,
     private: false,
+	userPermissions: [],
+    botPermissions: [],
 	options: [
 		{
 			name: '',

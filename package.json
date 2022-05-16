@@ -1,7 +1,7 @@
 {
-  "name": "matrix",
-  "version": "1.0.0",
-  "description": "Matrix",
+  "name": "mr.handyv5",
+  "version": "5.0.0",
+  "description": "MR.Handy Version 5",
   "main": "index.js",
   "scripts": {
     "test": "npm start",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FIUSdevelopment/matrix.git"
+    "url": "git+https://github.com/FIUSdevelopment/MR.Handy.git"
   },
   "keywords": [
     "bot",
@@ -23,9 +23,9 @@
   "author": "FIUS Development | Killer Boss Original",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FIUSdevelopment/matrix/issues"
+    "url": "https://github.com/FIUSdevelopment/MR.Handy/issues"
   },
-  "homepage": "https://github.com/FIUSdevelopment/matrix#readme",
+  "homepage": "https://github.com/FIUSdevelopment/MR.Handy#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "discord.js": "^13.7.0",

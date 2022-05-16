@@ -37,21 +37,16 @@ module.exports = async (client) => {
 	slashCommands.map((value) => {
 		const file = require(value);
 		if (!file?.name) return;
+
 		client.slashCommands.set(file.name, file);
 
 		if (['MESSAGE', 'USER'].includes(file.type)) delete file.description;
 
-        if (slashCommands.public) {
-		    arrayOfSlashCommands.push(file);
-        } else if (!slashCommands.public) {
-            arrayOfSlashCommandsPrivate.push(file);
-        }
-
-		if (slashCommands.private) {
+		if (file.private) {
 			arrayOfSlashCommandsPrivate.push(file);
-		} else if (slashCommands.beta) {
+		} else if (file.beta) {
 			arrayOfSlashCommandsBeta.push(file);
-		} else if (slashCommands.premium) {
+		} else if (file.premium) {
 			arrayOfSlashCommandsPremium.push(file);
 		} else {
 			arrayOfSlashCommands.push(file)
