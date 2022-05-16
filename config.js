@@ -14,7 +14,7 @@ module.exports = {
 		slashCommandsPublic: true,
 		supportServer: '',
 		privateServers: [''],
-		prefix: 'mr.',
+		prefix: '',
 		whitelistedBots: [],
 		helpEmoji: {
 			test: '',
