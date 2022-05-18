@@ -58,7 +58,7 @@ module.exports = async (client) => {
 			} else if (command.beta) {
 				const noBotEmbed = new MessageEmbed()
 					.setTitle(':x: | This command is beta')
-					.setDescription(`Invite ${client.config.discord.beta.name} with this link: https://discord.com/oauth2/authorize?client_id=${client.config.discord.beta.id}&permissions=1644971949567&scope=bot%20applications.commands`)
+					.setDescription(`Invite ${client.config.discord.beta.name} with this [link](https://discord.com/oauth2/authorize?client_id=${client.config.discord.beta.id}&permissions=1644971949567&scope=bot%20applications.commands)`)
 					.setColor('RED')
 					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
 					.setTimestamp();
