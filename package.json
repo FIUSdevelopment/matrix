@@ -29,8 +29,8 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "discord.js": "^13.7.0",
-    "fs": "^0.0.1-security",
-    "glob": "^8.0.1",
+    "fs": "0.0.1-security",
+    "glob": "^8.0.3",
     "quickmap.db": "^1.0.6",
     "util": "^0.12.4"
   }
