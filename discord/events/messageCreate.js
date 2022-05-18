@@ -47,11 +47,33 @@ module.exports = async (client) => {
 		if (command.version == 1) {
 
 			if (command.private) {
-				return;
+				const noBotEmbed = new MessageEmbed()
+					.setTitle(':x: | This command is private')
+					.setColor('RED')
+					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
+					.setTimestamp();
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+					message.channel.send({ embeds: [noBotEmbed] })
+				}
 			} else if (command.beta) {
-				return;
+				const noBotEmbed = new MessageEmbed()
+					.setTitle(':x: | This command is beta')
+					.setDescription(`Invite ${client.config.discord.beta.name} with this link: https://discord.com/oauth2/authorize?client_id=${client.config.discord.beta.id}&permissions=1644971949567&scope=bot%20applications.commands`)
+					.setColor('RED')
+					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
+					.setTimestamp();
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+					message.channel.send({ embeds: [noBotEmbed] })
+				}
 			} else if (command.premium) {
-				return;
+				const noBotEmbed = new MessageEmbed()
+					.setTitle(':x: | This command is premium')
+					.setColor('RED')
+					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
+					.setTimestamp();
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+					message.channel.send({ embeds: [noBotEmbed] })
+				}
 			} else {
 				if (command.toggleOff) {
 					let toggleoff_embed = new MessageEmbed()
