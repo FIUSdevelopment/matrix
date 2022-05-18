@@ -1,3 +1,4 @@
+module.exports = async function () {
 // Error Handling
 
 const { catchError } = require('./utils/catchError');
@@ -62,3 +63,4 @@ if (config.discord.enabled) {
 }
 
 module.exports = client;
+}

@@ -2,19 +2,19 @@ module.exports = {
 	debug: false,
 	logAllMessages: false,
 	database: {
-		type: 'mapdb',
+		type: 'mapdb',// only mapdb 
 		name: 'test',
 		number: 1,
 	},
 	discord: {
 		enabled: true,
 		discordjsversion: 'latest',
-		token: 'OTIwNjUxNDQ5ODI5MDU2NTYy.Ybndeg.2lpULhwLgBaT19KgZ0Av0ftlNlI',
+		token: '',
 		intents: 32767,
 		slashCommandsPublic: true,
-		supportServer: '831267653929795604',
-		privateServers: ['831267653929795604'],
-		prefix: 'mr.',
+		supportServer: '',
+		privateServers: [''],
+		prefix: '',
 		whitelistedBots: [],
 		helpEmoji: {
 			test: '',
@@ -22,27 +22,27 @@ module.exports = {
 			moderation: '',
 		},
 		client: {
-			name: 'MR.Handy',
-			avatar: 'https://cdn.discordapp.com/avatars/920651449829056562/2bb9fb5c7728741eff27ef96162adddd.webp',
-			footer: 'By FIUS Dev'
+			name: '',
+			avatar: '',
+			footer: ''
 		},
 		beta: {
 			type: 'multi',
-			name: 'MR.Handy BETA',
-			avatar: 'https://cdn.discordapp.com/avatars/920651449829056562/2bb9fb5c7728741eff27ef96162adddd.webp',
-			token: 'ODkwMjg2NzMzMTE0MDkzNTg4.YUtmIQ.XxTJRDrDXJXUXYPQnlu2cqTkC84',
+			name: '',
+			avatar: '',
+			token: '',
 		},
 		private: {
 			type: 'multi',
-			name: 'MR.Handy PRIVATO',
-			avatar: 'https://cdn.discordapp.com/avatars/920651449829056562/2bb9fb5c7728741eff27ef96162adddd.webp',
-			token: 'ODkyMDQ2OTY1MjgwNDg5NTMz.Gw63tC.S4-e_Oga9_LIquI_ojoB68tOqqTtfcOJE1Se9k',
+			name: '',
+			avatar: '',
+			token: '',
 		},
 		premium: {
 			type: 'multi',
-			name: 'MR.Handy PREMIUM',
-			avatar: 'https://cdn.discordapp.com/avatars/920651449829056562/2bb9fb5c7728741eff27ef96162adddd.webp',
-			token: 'ODkyMDQ2NTEzNzcyMDQ0Mzk4.GyVA9s._kQ9Ihwjl62D4A1LkCVKVxx6Ps98NQMTTL_UWY',
+			name: '',
+			avatar: '',
+			token: '',
 		},
 	},
 	telegram: {
