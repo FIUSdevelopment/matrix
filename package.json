@@ -1,7 +1,7 @@
 {
-  "name": "mr.handyv5",
-  "version": "5.0.0",
-  "description": "MR.Handy Version 5",
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "Enter in the matrix!",
   "main": "index.js",
   "scripts": {
     "test": "npm start",
@@ -16,9 +16,7 @@
   "keywords": [
     "bot",
     "discord",
-    "telegram",
-    "javascript",
-    "twitch"
+    "javascript"
   ],
   "author": "FIUS Development | Killer Boss Original",
   "license": "ISC",
