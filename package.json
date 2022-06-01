@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FIUSdevelopment/MR.Handy.git"
+    "url": "git+https://github.com/FIUSdevelopment/matrix.git"
   },
   "keywords": [
     "bot",
@@ -21,9 +21,9 @@
   "author": "FIUS Development | Killer Boss Original",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FIUSdevelopment/MR.Handy/issues"
+    "url": "https://github.com/FIUSdevelopment/matrix/issues"
   },
-  "homepage": "https://github.com/FIUSdevelopment/MR.Handy#readme",
+  "homepage": "https://github.com/FIUSdevelopment/matrix#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "discord.js": "^13.7.0",
