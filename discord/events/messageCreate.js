@@ -6,6 +6,7 @@ module.exports = async (client) => {
 	if (client.config.debug) {
 		console.log('[Debug] Discord event "messageCreate" online');
 	}
+	var developerID = client.config.discord.developers
 	const prefix = client.config.discord.prefix;
 	client.on('messageCreate', async (message) => {
 		if (client.config.debug) {
@@ -52,17 +53,17 @@ module.exports = async (client) => {
 					.setColor('RED')
 					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
 					.setTimestamp();
-				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get('892046965280489533')) {
 					message.channel.send({ embeds: [noBotEmbed] })
 				}
 			} else if (command.beta) {
 				const noBotEmbed = new MessageEmbed()
 					.setTitle(':x: | This command is beta')
-					.setDescription(`Invite ${client.config.discord.beta.name} with this [link](https://discord.com/oauth2/authorize?client_id=${client.config.discord.beta.id}&permissions=1644971949567&scope=bot%20applications.commands)`)
+					.setDescription(`Invite ${client.config.discord.beta.name} with this [link](https://discord.com/oauth2/authorize?client_id=${client.version.beta.application.id}&permissions=1644971949567&scope=bot%20applications.commands)`)
 					.setColor('RED')
 					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
 					.setTimestamp();
-				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get('890286733114093588')) {
 					message.channel.send({ embeds: [noBotEmbed] })
 				}
 			} else if (command.premium) {
@@ -71,7 +72,7 @@ module.exports = async (client) => {
 					.setColor('RED')
 					.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}`})
 					.setTimestamp();
-				if (!client.guilds.cache.get(message.guild.id).members.cache.get(client.config.discord.private)) {
+				if (!client.guilds.cache.get(message.guild.id).members.cache.get('892046513772044398')) {
 					message.channel.send({ embeds: [noBotEmbed] })
 				}
 			} else {

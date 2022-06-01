@@ -16,6 +16,7 @@ module.exports = {
 		privateServers: [''],
 		prefix: '',
 		whitelistedBots: [],
+		developers: [''],
 		helpEmoji: {
 			test: '',
 			info: '',

@@ -1,11 +1,11 @@
 module.exports = {
 	name: '',
 	description: '',
-    beta: false,
-    premium: false,
-    private: false,
+	beta: false,
+	premium: false,
+	private: false,
 	userPermissions: [],
-    botPermissions: [],
+	botPermissions: [],
 	options: [
 		{
 			name: '',
