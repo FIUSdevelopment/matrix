@@ -26,7 +26,6 @@ module.exports = async (client) => {
 
 		const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
 		
-		
 		if (!command){
 			let nocmd_embed = new MessageEmbed()
 			.setTitle(`:x: | No Command Found! Try Using  \`${prefix}help\``)
