@@ -1,10 +1,13 @@
 # MATRIX
 ## Installation
 ### Windows
-1. Download node.js latest version
-2. Download this: https://github.com/FIUSdevelopment/matrix/archive/refs/tags/1.0.0.zip
-3. Unzip the file
-4. Fill all the config.js
+
+1. Download the latest version of [NodeJS](https://nodejs.org) on your computer
+2. Download [this](https://github.com/FIUSdevelopment/matrix/archive/refs/tags/1.0.0.zip)
+3. Open the folder using Visual Studio code or another editor/ Cmd
+4. Install the npm modules using `npm i`
+5. Fill the config.js
+6. Run 
 ### Linux
 1. Install node.js latest version
 2. Run this command: ```wget https://github.com/FIUSdevelopment/matrix/archive/refs/tags/1.0.0.tar.gz```
