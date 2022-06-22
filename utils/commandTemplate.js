@@ -9,6 +9,7 @@ module.exports = {
     private: false,
     beta: false,
     premium: false,
+    requiresArgument:false,
     userPermissions: [],
     botPermissions: [],
     cooldowns: 0, // number or false

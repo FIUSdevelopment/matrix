@@ -17,32 +17,22 @@ module.exports = async (client) => {
 		if (client.config.logAllMessages) {
 			console.log(`[Message] ${message.content}`);
 		}
-		if (message.author.bot) {
-			if (!client.config.discord.whitelistedBots.includes(message.author.id)) {
-				return;
-			}
-		}
-		if (!message.content.toLocaleLowerCase().startsWith(client.config.discord.prefix)) {
-			return;
-		}
+		if (message.author.bot && !client.config.discord.whitelistedBots.includes(message.author.id)) return;
+		if (!message.content.toLowerCase().startsWith(client.config.discord.prefix)) return;
 
 		if (!message.member) {message.member = await message.guild.fetchMember(message);}
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 
 		const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
-		let noargs_embed = new MessageEmbed()
-			.setTitle(':x: | Please Provide A Command To Be Executed!')
-			.setColor('RED')
-			.setFooter({ text: `${name}`, iconURL: `${avatar}` })
-			.setTimestamp();
-		if (cmd.length === 0) return message.reply({ embeds: [noargs_embed] });
-
-		let nocmd_embed = new MessageEmbed()
+		
+		if (!command){
+			let nocmd_embed = new MessageEmbed()
 			.setTitle(`:x: | No Command Found! Try Using  \`${prefix}help\``)
 			.setColor('RED')
 			.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
 			.setTimestamp();
-		if (!command) return message.channel.send({ embeds: [nocmd_embed] });
+			return message.channel.send({ embeds: [nocmd_embed] });
+		}
 
 		if (command.version == 1) {
 
@@ -130,7 +120,17 @@ module.exports = async (client) => {
 					setTimeout(() => {
 						client.cooldowns.delete(`${command.name}${message.author.id}`);
 					}, command.cooldowns);
+				}else if(command.requiresArgument && !args.length){
+					let no_args_embed = new MessageEmbed()
+						.setTitle(`❌ Missing args`)
+						.setDescription(`You need to specify at least one argument for using this command!`)
+						.setColor('BLUE')
+						.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
+						.setTimestamp();
+			
+					return message.reply({ embeds: [cooldown_embed] });
 				}
+					
 				await command.run(client, message, args);
 			}
 		}
