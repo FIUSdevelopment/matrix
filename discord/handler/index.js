@@ -4,7 +4,7 @@ const globPromise = promisify(glob);
 const chalk = require('chalk');
 
 module.exports = async (client) => {
-    const config = require('../../config');
+    const config = client.config;
 
 	if (config.debug) {
 		console.log('[Debug] Discord handler online')
@@ -38,6 +38,10 @@ module.exports = async (client) => {
 		const file = require(value);
 		if (!file?.name) return;
 
+		if (client.config.debug) {
+			console.log(`Loading ${file.name}`)
+		}
+
 		client.slashCommands.set(file.name, file);
 
 		if (['MESSAGE', 'USER'].includes(file.type)) delete file.description;
@@ -53,6 +57,12 @@ module.exports = async (client) => {
 		}
 	});
 	client.on('ready', async () => {
+/*		if (client.config.debug) {
+			console.log(arrayOfSlashCommands);
+			console.log(arrayOfSlashCommandsBeta);
+			console.log(arrayOfSlashCommandsPremium);
+			console.log(arrayOfSlashCommandsPrivate);
+		} */
 		if (config.discord.slashCommandsPublic) {
 			await client.application.commands.set(arrayOfSlashCommands);
 
@@ -71,7 +81,7 @@ module.exports = async (client) => {
 			if (config.discord.premium.type == 'multi') {
 				client.version.premium.application.commands.set(arrayOfSlashCommandsPremium)
 			}
-		} else if (config.discord.slashCommandsPublic) {
+		} else if (!config.discord.slashCommandsPublic) {
 			config.discord.privateServers.forEach(async supportServerID => {
 				if (config.discord.private.type == 'multi') {
 

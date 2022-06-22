@@ -30,7 +30,7 @@ module.exports = async (client) => {
 		if (!message.member) {message.member = await message.guild.fetchMember(message);}
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 
-		const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+		const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 		let noargs_embed = new MessageEmbed()
 			.setTitle(':x: | Please Provide A Command To Be Executed!')
 			.setColor('RED')
@@ -157,7 +157,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;
@@ -253,7 +253,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;
@@ -349,7 +349,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;

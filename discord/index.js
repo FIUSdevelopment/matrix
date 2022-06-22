@@ -10,7 +10,20 @@ module.exports = async (client) => {
         if (client.config.debug) {
             console.log('[Debug] Discord index online')
         }
-        
-        require('./handler/index')(client);
+
+        // -------------------Database-------------------
+        client.db = []
+        if (client.config.database.type == 'discortics.db' || client.config.database.type == 'mongodb' || client.config.database.type == 'mongo' || client.config.database.type == 'mongose') {
+            const db = require('discortics.db');
+            await db.connect(client.config.database.connectionURL);
+            client.db.users = await new db.table('users');
+            client.db.guilds = await new db.table('guilds');
+
+            // https://npmjs.com/package/discortics.db
+        } else if (client.config.database.type == 'quickmap.db' || client.config.database.type == 'map.db') {
+            const db = require('discortics.db');
+            client.db.users = await new db.table('users');
+            client.db.guilds = await new db.table('guilds');
+        }
     }
 }
