@@ -23,10 +23,22 @@ module.exports = async (client) => {
 		if (!message.member) {message.member = await message.guild.fetchMember(message);}
 		const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 
+<<<<<<< HEAD
+		const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
+		let noargs_embed = new MessageEmbed()
+			.setTitle(':x: | Please Provide A Command To Be Executed!')
+			.setColor('RED')
+			.setFooter({ text: `${name}`, iconURL: `${avatar}` })
+			.setTimestamp();
+		if (cmd.length === 0) return message.reply({ embeds: [noargs_embed] });
+
+		let nocmd_embed = new MessageEmbed()
+=======
 		const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
 		
 		if (!command){
 			let nocmd_embed = new MessageEmbed()
+>>>>>>> 10f6788ceb7a8e9996c2ef5d0b774a253db485ec
 			.setTitle(`:x: | No Command Found! Try Using  \`${prefix}help\``)
 			.setColor('RED')
 			.setFooter({ text: `${clientname}`, iconURL: `${clientavatar}` })
@@ -156,7 +168,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;
@@ -252,7 +264,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;
@@ -348,7 +360,7 @@ module.exports = async (client) => {
 			if (!message.member) {message.member = await message.guild.fetchMember(message);}
 			const [cmd, ...args] = message.content.slice(prefix.length).trim().split(' ');
 	
-			const command = client.commands.get(cmd.toLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
+			const command = client.commands.get(cmd.toLocaleLowerCase()) || client.commands.find((c) => c.aliases?.includes(cmd.toLocaleLowerCase()));
 	
 			if (cmd.length === 0) return;
 			if (!command) return;

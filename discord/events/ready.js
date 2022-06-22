@@ -2,7 +2,7 @@ module.exports = async (client) => {
 	if (client.config.debug) {
 		console.log('[Debug] Discord event "ready" online');
 	};
-	const { discord } = require('../../config');
+	const { discord } = client.config;
 	const prefix = discord.prefix;
 	const chalk = require('chalk');
 	const { version: discordjsVersion } = require('discord.js');

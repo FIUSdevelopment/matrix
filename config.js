@@ -2,9 +2,10 @@ module.exports = {
 	debug: false,
 	logAllMessages: false,
 	database: {
-		type: 'mapdb',// only mapdb 
+		type: 'mapdb',// mapdb / mongodb 
 		name: 'test',
 		number: 1,
+		connectionURL: '' //only if type = mongodb
 	},
 	discord: {
 		enabled: true,
@@ -18,9 +19,7 @@ module.exports = {
 		whitelistedBots: [],
 		developers: [''],
 		helpEmoji: {
-			test: '',
-			info: '',
-			moderation: '',
+			test: ''
 		},
 		client: {
 			name: '',
