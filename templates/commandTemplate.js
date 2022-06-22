@@ -14,5 +14,8 @@ module.exports = {
     cooldowns: 0, // number or false
     version: 1,
 
-    run: async (client, message, args) => {},
+    run: async (client, message, args) => {
+        // var language = await client.getLanguage(client, message.guild.id);
+        // var translations = await client.getTranslations(language, 'commands','commandCategory', 'commandName')
+    },
 }
