@@ -6,8 +6,7 @@ module.exports = async (client) => {
 	if (client.config.debug) {
 		console.log('[Debug] Discord event "messageCreate" online');
 	}
-	var developerID = client.config.discord.developers
-	const prefix = client.config.discord.prefix;
+	const {developperId, prefix} = client.config.discord
 	client.on('messageCreate', async (message) => {
 		if (client.config.debug) {
 			console.log('[Debug] Discord event "messageCreate" has been invoked');
