@@ -76,6 +76,9 @@ async function start() {
 		client.dsclient.getLanguage = getLanguage;
 		require('./discord/index')(client.dsclient);
 	}
+	if (config.webserver.enabled) {
+		require('./webserver/index.js') (config)
+	}
 	return client;
 }
 var client = start()
