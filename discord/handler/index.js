@@ -70,11 +70,7 @@ module.exports = async (client) => {
 				config.discord.privateServers.forEach(async supportServerID => {
 					await client.version.private.guilds.cache.get(supportServerID).commands.set(arrayOfSlashCommandsPrivate);
 				})
-			} /*else {
-				config.discord.privateServers.forEach(async supportServerID => {
-					await client.version.private.guilds.cache.get(supportServerID).commands.set(arrayOfSlashCommandsPrivate);
-				})
-			}*/
+			}
 			if (config.discord.beta.type == 'multi') {
 				client.version.beta.application.commands.set(arrayOfSlashCommandsBeta)
 			}

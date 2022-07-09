@@ -1,16 +1,14 @@
 const http = require("http");
 
 module.exports = async (config) => {
-    const host = config.webserver.host;
+    //const host = config.webserver.host;
     const port = config.webserver.port;
 
-    const requestListener = function (req, res) {
-        res.writeHead(200);
-        res.end("My first server!");
-    };
+    const express = require('express');
+    const app = express();
 
-    const server = http.createServer(requestListener);
-    server.listen(port, host, () => {
-        console.log(`Server is running on http://${host}:${port}`);
-    });
+    app.listen(port, () => {
+        console.log(`Matrix listening on port ${port}`);
+    })
+    app.use(express.static('website'))
 }

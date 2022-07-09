@@ -1,14 +1,14 @@
 module.exports = {
 	debug: false,
 	logAllMessages: false,
-	database: {
+	database: {		
 		type: 'mapdb',// mapdb / mongodb 
 		name: 'test',
 		number: 1,
 		connectionURL: '' //only if type = mongodb
 	},
 	discord: {
-		enabled: true,
+		enabled: false,
 		discordjsversion: 'latest',
 		token: '',
 		intents: 32767,
@@ -27,19 +27,19 @@ module.exports = {
 			footer: ''
 		},
 		beta: {
-			type: 'multi',
+			type: 'multi', // multi / mono
 			name: '',
 			avatar: '',
 			token: '',
 		},
 		private: {
-			type: 'multi',
+			type: 'multi', // multi / mono
 			name: '',
 			avatar: '',
 			token: '',
 		},
 		premium: {
-			type: 'multi',
+			type: 'multi', // multi / mono
 			name: '',
 			avatar: '',
 			token: '',
@@ -50,7 +50,6 @@ module.exports = {
 	},
 	webserver: {
 		enabled: false,
-		host: 'localhost', // IP
 		port: 8000, // Port
 	},
 };
