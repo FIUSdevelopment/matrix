@@ -1,5 +1,3 @@
-# Warning: This version is still under development, it may not work
-
 # MATRIX
 ## Installation
 
