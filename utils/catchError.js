@@ -1,4 +1,3 @@
-
 const chalk = require('chalk')
 
 function catchError(message, err, origin, reason) { 

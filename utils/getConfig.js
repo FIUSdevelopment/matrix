@@ -1,5 +1,5 @@
 async function getConfig() {
-    const config = require('../config.js')
-    return config
+    const { settingsFile } = require('../config.js')
+    return settingsFile
 }
 module.exports = { getConfig }

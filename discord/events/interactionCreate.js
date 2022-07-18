@@ -9,6 +9,11 @@ module.exports = async (client) => {
         console.log('[Debug] Discord event "interactionCreate" online')
     }
     client.on('interactionCreate', async (interaction) => {
+		if (client.config.debug) {
+			console.log('[Debug] Discord event "interactionCreate" has been invoked')
+			interaction.reply('Debug mode enabled')
+		}
+
 
     	// ———————————————[Slash Commands]———————————————
 	    if (interaction.isCommand()) {

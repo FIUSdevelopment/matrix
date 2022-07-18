@@ -25,5 +25,7 @@ module.exports = async (client) => {
             client.db.users = await new db.table('users');
             client.db.guilds = await new db.table('guilds');
         }
+
+        require('./handler/index')(client);
     }
 }

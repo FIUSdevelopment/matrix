@@ -22,29 +22,6 @@ async function start() {
 	const MapDB = require('quickmap.db');
 
 	if (config.debug) console.log('[Debug] Warning: Command Handler Debug Mode Enabled');
-	/*
-	switch (config.database.name) {
-	case 'mapdb':
-		if (config.database.number == 1) {
-			client.db = new MapDB(config.database.name);
-		} else {
-			client.db = { guilds: {}, users: {}};
-			client.db.guilds = new MapDB('guilds.json');
-			client.db.users = new MapDB('users.json');
-			client.db.economy = new MapDB('economy.json');
-		}
-		break;
-	}*/
-	const dbconntect = require('./utils/databaseConntect');
-	// client.db = dbconntect(client)
-
-
-	client.package = [];
-	client.package.db = require('quickmap.db');
-
-	//const languages = new Collection();
-	//fs.readdirSync('./languages').filter(file => file.endsWith('.js')).map(language => require(`../languages/${language}`)).forEach(language => languages.set(language.name, language.translation));
-	//client.trSelect = (language) => languages.get(language);
 
 	if (config.discord.enabled) {
 		client.dsclient = new Discord.Client({ intents: config.discord.intents });
@@ -75,6 +52,9 @@ async function start() {
 		client.dsclient.getTranslations = getTranslations;
 		client.dsclient.getLanguage = getLanguage;
 		require('./discord/index')(client.dsclient);
+	}
+	if (config.webserver.enabled) {
+		require('./webserver/index.js') (config)
 	}
 	return client;
 }
